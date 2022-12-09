@@ -7,25 +7,35 @@
             Register
           </h2>
         </div>
-        <b-form-group class="name-input basic-margin" label-for="input-2">
-          <span class="login__input-label" :class="{'login__input-label-active': formRegister.name !== ''}">Логин</span>
+        <b-form-group class="name-input basic-margin" label-for="input-name">
+          <span
+            class="login__input-label text-name"
+            :class="{'login__input-label-active': formRegister.name !== ''}"
+          >
+            Логин
+          </span>
           <b-form-input
-            id="input-2"
+            id="input-name"
             v-model="formRegister.name"
             required
           ></b-form-input>
         </b-form-group>
-        <b-form-group class="password-input basic-margin" label-for="input-2">
-          <span class="login__input-label" :class="{'login__input-label-active': formRegister.password !== ''}">Пароль</span>
+        <b-form-group class="password-input basic-margin" label-for="input-password">
+          <span
+            class="login__input-label"
+            :class="{'login__input-label-active': formRegister.password !== ''}"
+          >
+            Пароль
+          </span>
           <b-form-input
-            id="input-2"
+            id="input-password"
             v-model="formRegister.password"
             required
           ></b-form-input>
         </b-form-group>
 
         <div class="d-flex align-items-center flex-column">
-          <button class="w-25 basic-margin login__btn btn" type="submit" variant="success">Login</button>
+          <button class="btn w-25 basic-margin main-btn-primary" type="submit" variant="success">Войти</button>
           <div class="d-flex justify-content-between login__authorization">
             <b-button>
               <i class="fa-brands fa-google fa-lg"></i>
@@ -76,6 +86,14 @@ export default {
         this.login = true
       }, 800)
     }
+  },
+  mounted () {
+    document.body.querySelector('.text-name').addEventListener('click', () => {
+      document.body.querySelector('#input-name').focus()
+    })
+    document.body.querySelector('.text-password').addEventListener('click', () => {
+      document.body.querySelector('#input-password').focus()
+    })
   }
 }
 </script>
@@ -123,36 +141,32 @@ export default {
     max-width: 150px;
     width: 100%;
   }
-
-  &__btn {
-    background: rgba(123,69,236,1);
-    color: #Fff;
-
-    &:hover {
-      color: #fff;
-      background: rgb(100, 47, 214)
-    }
-    &:active {
-      color: #fff;
-      background: rgba(9,9,121,1)
-    }
-  }
   &__input-label {
     position: relative;
-    top: 30px;
+    top: 32px;
     left: 15px;
     color: var(--bs-gray-600);
     transition: top .1s linear, left .1s linear;
+    line-height: 28px;
 
     &-active {
       top: 0;
       left: 0;
       font-size: 14px;
+      line-height: 28px;
       color: rgb(100, 47, 214)
     }
   }
 }
 
+.main-btn-primary {
+  background: #7749F8;
+  color: #fff;
+
+  &:hover, &:focus {
+    background: #5227CC;
+  }
+}
 .basic-margin {
   margin-bottom: 20px;
 }

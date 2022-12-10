@@ -5,7 +5,7 @@
         <img src="@/assets/logo.svg" alt="logo">
       </router-link>
       <nav class="d-flex align-items-center">
-        <ul class="d-flex align-items-center nav-list">
+        <ul class="d-flex align-items-center nav-list" v-if="token">
           <li class="nav__items">
             <a href="#">
               Проекты
@@ -23,9 +23,9 @@
           </li>
         </ul>
       </nav>
-      <div class="header__login-block">
+      <div class="header__login-block" v-if="!token">
         <router-link :to="{name: 'loginPage'}">
-          <b-button variant="outline-dark" class="register">
+          <b-button variant="outline-dark" class="register register-block">
             Присоединиться
           </b-button>
         </router-link>
@@ -33,13 +33,35 @@
           Войти
         </b-button>
       </div>
+      <div class="header__login-block d-flex flex-nowrap" v-else>
+        <tippyComponent :content="'У вас пока что нет никаких уведомлений'" arrow class="register-block">
+          <template v-slot:trigger>
+            <button class="register">
+              <i class="fa-solid fa-bell"></i>
+            </button>
+          </template>
+        </tippyComponent>
+
+        <button class="register register-block">
+          <i class="fa-regular fa-square-plus"></i>
+        </button>
+        <router-link :to="{name: 'profilePage'}">
+          <button class="register register-block">
+            <i class="fa-solid fa-user"></i>
+          </button>
+        </router-link>
+      </div>
     </div>
   </header>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
-  name: 'HeaderBlock'
+  name: 'HeaderBlock',
+  computed: {
+    ...mapState('authorization', ['token'])
+  }
 }
 </script>
 
@@ -47,6 +69,7 @@ export default {
 
 .container-header {
   position: fixed;
+  z-index: 100;
   left: 0;
   top: 0;
   right: 0;
@@ -75,6 +98,12 @@ export default {
 }
 
 .register {
+  border: none;
+  background: none;
+  font-size: 22px;
+}
+
+.register-block {
   margin-right: 24px;
 }
 </style>

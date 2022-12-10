@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer :class="{'fixed-footer': fixed}">
     <div class="container d-flex align-items-center h-100">
       <router-link :to="{name: 'mainPage'}" class="logo">
         <img src="@/assets/footerLogo.svg" alt="logo">
@@ -21,11 +21,23 @@
 
 <script>
 export default {
-  name: 'footerBlock'
+  name: 'footerBlock',
+  props: {
+    fixed: {
+      type: Boolean,
+      default: false
+    }
+  }
 }
 </script>
 
 <style lang="scss">
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 footer {
   background: #000;
   height: 80px;

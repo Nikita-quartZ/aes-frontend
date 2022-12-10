@@ -46,8 +46,13 @@ export default {
 <style lang="scss">
 
 .container-header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
   height: 80px;
-  box-shadow: 0px 4px 4px rgb(221, 221, 221);
+  background: #fff;
+  box-shadow: 0px 2px 2px rgba(221, 221, 221, 0.4);
 }
 
 .nav-list {

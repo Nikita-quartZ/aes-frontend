@@ -77,23 +77,114 @@
           </div>
         </div>
       </section>
+      <section class="projects">
+        <div class="container">
+          <div class="d-flex justify-content-between basic-margin">
+            <h2>Топ проектов</h2>
+            <button
+              class="btn btn-outline-dark"
+            >
+              Посмотреть все
+            </button>
+          </div>
+          <div class="projects__cards">
+            <ProjectCard v-for="item in items" :key="item.text" :info="item"/>
+          </div>
+        </div>
+      </section>
+      <section class="Crowdfunding">
+        <div class="container">
+          <div class="Crowdfunding__info">
+            <h2 class="Crowdfunding__info-header basic-margin">
+              Краудфандинг
+            </h2>
+            <p class="Crowdfunding__info-paragraph basic-margin">
+              Найдите инвесторов для реализации технологических и творческих идей
+            </p>
+            <button class="btn main-btn-primary w-100">
+              Создать проект
+            </button>
+          </div>
+          <div class="Crowdfunding__icons d-flex justify-content-between align-items-center">
+            <div class="icon-block d-flex flex-column align-items-center">
+              <img src="@/assets/rocket.png" alt="Rocket">
+              <p class="icon-block-number">65</p>
+              <p class="icon-block-paragraph">завершенных проектов</p>
+            </div>
+            <div class="icon-block d-flex flex-column align-items-center">
+              <img src="@/assets/rocket.png" alt="Rocket">
+              <p class="icon-block-number">65</p>
+              <p class="icon-block-paragraph">завершенных проектов</p>
+            </div>
+            <div class="icon-block d-flex flex-column align-items-center">
+              <img src="@/assets/rocket.png" alt="Rocket">
+              <p class="icon-block-number">65</p>
+              <p class="icon-block-paragraph">завершенных проектов</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+    <Footer/>
   </div>
 </template>
 
 <script>
 import Header from '@/components/header'
+import Footer from '@/components/footer'
+import ProjectCard from '@/components/projectCard.vue'
+
 export default {
   data () {
     return {
       formRegister: {
         name: '',
         password: ''
-      }
+      },
+      items: [
+        {
+          url: 'https://mobimg.b-cdn.net/v3/fetch/89/89b1452e43e738be92c573fdebfb1d22.jpeg',
+          text: 'Роботы для выгула собак',
+          company: 'ООО “Нанотехнологии”',
+          amount: 225
+        },
+        {
+          url: 'https://mobimg.b-cdn.net/v3/fetch/89/89b1452e43e738be92c573fdebfb1d22.jpeg',
+          text: 'Роботы для выгула собак',
+          company: 'ООО “Нанотехнологии”',
+          amount: 225
+        },
+        {
+          url: 'https://mobimg.b-cdn.net/v3/fetch/89/89b1452e43e738be92c573fdebfb1d22.jpeg',
+          text: 'Роботы для выгула собак',
+          company: 'ООО “Нанотехнологии”',
+          amount: 225
+        },
+        {
+          url: 'https://mobimg.b-cdn.net/v3/fetch/89/89b1452e43e738be92c573fdebfb1d22.jpeg',
+          text: 'Роботы для выгула собак',
+          company: 'ООО “Нанотехнологии”',
+          amount: 225
+        },
+        {
+          url: 'https://mobimg.b-cdn.net/v3/fetch/89/89b1452e43e738be92c573fdebfb1d22.jpeg',
+          text: 'Роботы для выгула собак',
+          company: 'ООО “Нанотехнологии”',
+          amount: 225
+        },
+        {
+          url: 'https://mobimg.b-cdn.net/v3/fetch/89/89b1452e43e738be92c573fdebfb1d22.jpeg',
+          text: 'Роботы для выгула собак',
+          company: 'ООО “Нанотехнологии”',
+          amount: 225
+        }
+      ]
     }
   },
   components: {
-    Header
+    Header,
+    Footer,
+    ProjectCard
   },
   mounted () {
     document.body.querySelector('.text-name').addEventListener('click', () => {
@@ -118,7 +209,7 @@ export default {
 }
 
 .login-block {
-  padding-top: 48px;
+  padding-top: 118px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
 
@@ -179,7 +270,71 @@ export default {
       margin-bottom: 20px;
     }
   }
+}
 
+.projects {
+  padding: 60px 0;
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px;
+  }
+}
+
+.Crowdfunding {
+  padding: 60px 0;
+  background: linear-gradient(270.96deg, rgba(122, 77, 236, 0.7) 0.82%, rgba(246, 243, 254, 0.7) 99.41%);
+
+  & .container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  &__info {
+    grid-column: 1 / 5;
+  }
+
+  &__icons {
+    grid-column: 6 / 13;
+  }
+
+  &__info-header {
+    font-weight: 300;
+    font-size: 48px;
+    line-height: 68px;
+    color: #1F1983;
+  }
+
+  &__info-paragraph {
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 49px;
+    color: #000000;
+  }
+}
+
+.icon-block {
+  padding: 15px;
+  width: 208px;
+  height: 208px;
+  background: #FFFFFF;
+  border-radius: 16px;
+}
+
+.icon-block-number {
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 46px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+.icon-block-paragraph {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 27px;
+  text-align: center;
+  color: #000000;
 }
 
 .basic-margin {

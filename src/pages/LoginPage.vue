@@ -1,6 +1,9 @@
 <template>
   <div class="login">
     <div class="login__container">
+      <router-link :to="{name: 'mainPage'}" class="logo d-flex justify-content-center basic-margin">
+        <img src="@/assets/logo.svg" alt="logo" class="logo-img">
+      </router-link>
       <b-form>
         <div class="basic-margin d-flex justify-content-center">
           <h2 >
@@ -104,8 +107,8 @@ export default {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: rgb(34,17,131);
-  background: linear-gradient(90deg, rgba(34,17,131,1) 0%, rgba(9,9,121,1) 29%, rgba(123,69,236,1) 100%);
+  background: rgb(255,255,255);
+  background: linear-gradient(194deg, rgba(255,255,255,1) 0%, rgba(123,69,236,1) 79%, rgba(123,69,236,1) 100%);
 
   &__container {
   max-width: 600px;
@@ -169,6 +172,10 @@ export default {
 }
 .basic-margin {
   margin-bottom: 20px;
+}
+
+.logo-img {
+  width: 300px;
 }
 
 </style>

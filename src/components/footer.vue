@@ -5,13 +5,13 @@
         <img src="@/assets/footerLogo.svg" alt="logo">
       </router-link>
       <div class="social">
-        <b-link class="social-icon" href="#">
+        <b-link class="social-icon" href="https://vk.com/im">
           <i class="fa-brands fa-vk"></i>
         </b-link>
-        <b-link class="social-icon" href="#">
+        <b-link class="social-icon" href="https://web.telegram.org">
           <i class="fa-brands fa-telegram"></i>
         </b-link>
-        <b-link class="social-icon" href="#">
+        <b-link class="social-icon" href="https://ok.ru">
           <i class="fa-brands fa-square-odnoklassniki"></i>
         </b-link>
       </div>

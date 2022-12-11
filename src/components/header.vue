@@ -1,30 +1,33 @@
 <template>
   <header class="container-header">
     <div class="container h-100 d-flex align-items-center">
-      <router-link :to="{name: 'mainPage'}" class="logo">
+      <router-link :to="{ name: 'mainPage' }" class="logo" v-if="!token">
+        <img src="@/assets/logo.svg" alt="logo">
+      </router-link>
+      <router-link :to="{ name: 'ProjectPage' }" class="logo" v-else>
         <img src="@/assets/logo.svg" alt="logo">
       </router-link>
       <nav class="d-flex align-items-center">
         <ul class="d-flex align-items-center nav-list" v-if="token">
           <li class="nav__items">
-            <a href="#">
+            <router-link :to="{ name: 'ProjectPage' }">
               Проекты
-            </a>
+            </router-link>
           </li>
           <li class="nav__items">
-            <a href="#">
-              Таланты
-            </a>
+            <router-link :to="{ name: 'StudentsPage' }">
+              Вакансии
+            </router-link>
           </li>
           <li class="nav__items">
-            <a href="#">
+            <router-link :to="{ name: 'ProjectPage' }">
               Краудфандинг
-            </a>
+            </router-link>
           </li>
         </ul>
       </nav>
       <div class="header__login-block" v-if="!token">
-        <router-link :to="{name: 'loginPage'}">
+        <router-link :to="{ name: 'loginPage' }">
           <b-button variant="outline-dark" class="register register-block">
             Присоединиться
           </b-button>
@@ -42,11 +45,11 @@
           </template>
         </tippyComponent>
 
-        <button class="register register-block">
+        <button class="register register-block" v-if="role !== 'student'">
           <i class="fa-regular fa-square-plus"></i>
         </button>
-        <router-link :to="{name: 'profilePage'}">
-          <button class="register register-block">
+        <router-link :to="{ name: 'profilePage' }">
+          <button class="register register-block m-0">
             <i class="fa-solid fa-user"></i>
           </button>
         </router-link>
@@ -60,13 +63,12 @@ import { mapState } from 'vuex'
 export default {
   name: 'HeaderBlock',
   computed: {
-    ...mapState('authorization', ['token'])
+    ...mapState('authorization', ['token', 'role'])
   }
 }
 </script>
 
 <style lang="scss">
-
 .container-header {
   position: fixed;
   z-index: 100;
@@ -86,6 +88,7 @@ export default {
 .nav {
   &__items {
     margin-right: 48px;
+
     & a {
       text-decoration: none;
       color: #000;

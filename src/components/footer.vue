@@ -1,7 +1,7 @@
 <template>
-  <footer :class="{'fixed-footer': fixed}">
+  <footer :class="{ 'fixed-footer': fixed }">
     <div class="container d-flex align-items-center h-100">
-      <router-link :to="{name: 'mainPage'}" class="logo">
+      <router-link :to="{ name: 'mainPage' }" class="logo">
         <img src="@/assets/footerLogo.svg" alt="logo">
       </router-link>
       <div class="social">
@@ -38,6 +38,7 @@ export default {
   left: 0;
   right: 0;
 }
+
 footer {
   background: #000;
   height: 80px;
@@ -57,5 +58,4 @@ footer {
     color: #5227CC;
   }
 }
-
 </style>

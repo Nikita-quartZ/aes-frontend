@@ -16,19 +16,12 @@
         <span class="profile__star basic-margin text-warning">
           <i class="fa-solid fa-star"></i> 4.8
         </span>
-        <button
-          class="btn w-100 basic-margin"
-          :class="{ 'btn-primary': !edit, 'btn-outline-primary': edit }"
-          @click="edit = !edit"
-        >
+        <button class="btn w-100 basic-margin" :class="{ 'btn-primary': !edit, 'btn-outline-primary': edit }"
+          @click="edit = !edit">
           Редактировать
         </button>
-        <b-link
-          class="btn w-100 basic-margin"
-          :class="{ 'btn-primary': !edit, 'btn-outline-primary': edit }"
-          href="#project"
-          @click="vacancyChange"
-        >
+        <b-link class="btn w-100 basic-margin" :class="{ 'btn-primary': !edit, 'btn-outline-primary': edit }"
+          href="#project" @click="vacancyChange">
           Отклики на вакансии проектов
         </b-link>
         <button class="btn btn-outline-danger w-100 basic-margin" @click="goToMain">
@@ -58,7 +51,7 @@
 
         <div class="profile__decorate-block basic-margin" v-if="!edit">
           <h4 class="basic-margin" id="project">
-             Активные проекты
+            Активные проекты
           </h4>
           <div class="d-flex">
             <Card v-for="item in items" :key="item.text" :info="item" class="card-margin-right" />
@@ -67,27 +60,21 @@
 
         <div class="profile__decorate-block basic-margin" v-if="!edit">
           <h4 class="basic-margin" id="project">
-             Отклики на вакансии проектов
+            Отклики на вакансии проектов
           </h4>
           <b-list-group v-if="vacancy.length">
-            <b-list-group-item
-              v-for="(item, index) in vacancy"
-              :key="item.name"
-            >
-            <div class="d-flex  align-items-center">
-              <h6 class="vacancy__name">{{ item.surname }} {{ item.name }}</h6>
-              <p class="vacancy__project basic-margin-right">{{ item.project }}</p>
-              <span class="text-warning basic-margin-right" >
-                <i class="fa-solid fa-star"></i>
-                {{ item.rating }}
-              </span>
-              <b-button
-                variant="outline-danger"
-                @click="deleteVacancy(index)"
-              >
-                <i class="fa-solid fa-xmark"></i>
-              </b-button>
-            </div>
+            <b-list-group-item v-for="(item, index) in vacancy" :key="item.name">
+              <div class="d-flex  align-items-center">
+                <h6 class="vacancy__name">{{ item.surname }} {{ item.name }}</h6>
+                <p class="vacancy__project basic-margin-right">{{ item.project }}</p>
+                <span class="text-warning basic-margin-right">
+                  <i class="fa-solid fa-star"></i>
+                  {{ item.rating }}
+                </span>
+                <b-button variant="outline-danger" @click="deleteVacancy(index)">
+                  <i class="fa-solid fa-xmark"></i>
+                </b-button>
+              </div>
             </b-list-group-item>
           </b-list-group>
           <h5 v-else>
@@ -97,7 +84,7 @@
 
         <div class="profile__decorate-block basic-margin" v-if="!edit">
           <h4 class="basic-margin" id="project">
-             Законченные проекты
+            Законченные проекты
           </h4>
           <div class="d-flex">
             <Card v-for="item in items" :key="item.text" :info="item" class="card-margin-right" />
@@ -119,27 +106,21 @@
       </div>
       <div class="profile__info-block profile__decorate-block basic-margin w-100" v-else>
         <h4 class="basic-margin" id="project">
-            Отклики на вакансии проектов
+          Отклики на вакансии проектов
         </h4>
         <b-list-group v-if="vacancy.length">
-          <b-list-group-item
-            v-for="(item, index) in vacancy"
-            :key="item.name"
-          >
-          <div class="d-flex  align-items-center">
-            <h6 class="vacancy__name">{{ item.surname }} {{ item.name }}</h6>
-            <p class="vacancy__project basic-margin-right">{{ item.project }}</p>
-            <span class="text-warning basic-margin-right" >
-              <i class="fa-solid fa-star"></i>
-              {{ item.rating }}
-            </span>
-            <b-button
-              variant="outline-danger"
-              @click="deleteVacancy(index)"
-            >
-              <i class="fa-solid fa-xmark"></i>
-            </b-button>
-          </div>
+          <b-list-group-item v-for="(item, index) in vacancy" :key="item.name">
+            <div class="d-flex  align-items-center">
+              <h6 class="vacancy__name">{{ item.surname }} {{ item.name }}</h6>
+              <p class="vacancy__project basic-margin-right">{{ item.project }}</p>
+              <span class="text-warning basic-margin-right">
+                <i class="fa-solid fa-star"></i>
+                {{ item.rating }}
+              </span>
+              <b-button variant="outline-danger" @click="deleteVacancy(index)">
+                <i class="fa-solid fa-xmark"></i>
+              </b-button>
+            </div>
           </b-list-group-item>
         </b-list-group>
         <h5 v-else>
@@ -264,11 +245,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .vacancy__name {
   margin: 0;
   margin-right: auto;
 }
+
 .vacancy__project {
   margin: 0;
 }
@@ -278,17 +259,20 @@ export default {
   border-radius: 20px;
   background: var(--bs-gray-100);
 }
+
 .profile__role {
   color: var(--bs-dark);
   display: block;
   text-align: center;
   font-size: 24px;
 }
+
 .profile__star {
   color: var(--bs-blue);
   display: block;
   text-align: center;
 }
+
 .profile {
   padding-top: 120px;
   padding-bottom: 60px;

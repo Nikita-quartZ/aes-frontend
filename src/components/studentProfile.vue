@@ -163,23 +163,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .profile__decorate-block {
   padding: 15px;
   border-radius: 20px;
   background: var(--bs-gray-100);
 }
+
 .profile__role {
   color: var(--bs-dark);
   display: block;
   text-align: center;
   font-size: 24px;
 }
+
 .profile__star {
   color: var(--bs-blue);
   display: block;
   text-align: center;
 }
+
 .profile {
   padding-top: 120px;
   padding-bottom: 60px;

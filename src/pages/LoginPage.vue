@@ -1,44 +1,31 @@
 <template>
   <div class="login">
     <div class="login__container">
-      <router-link :to="{name: 'mainPage'}" class="logo d-flex justify-content-center basic-margin">
+      <router-link :to="{ name: 'mainPage' }" class="logo d-flex justify-content-center basic-margin">
         <img src="@/assets/logo.svg" alt="logo" class="logo-img">
       </router-link>
       <b-form>
         <div class="basic-margin d-flex justify-content-center">
-          <h2 >
+          <h2>
             Register
           </h2>
         </div>
-        <b-form-group class="name-input basic-margin" label-for="input-name">
-          <span
-            class="login__input-label text-name"
-            :class="{'login__input-label-active': formRegister.name !== ''}"
-          >
+        <b-form-group class="name-input" label-for="input-name">
+          <span class="login__input-label text-name" :class="{ 'login__input-label-active': formRegister.name !== '' }">
             Логин
           </span>
-          <b-form-input
-            id="input-name"
-            v-model="formRegister.name"
-            required
-          ></b-form-input>
+          <b-form-input id="input-name" v-model="formRegister.name" required></b-form-input>
         </b-form-group>
         <b-form-group class="password-input basic-margin" label-for="input-password">
-          <span
-            class="login__input-label"
-            :class="{'login__input-label-active': formRegister.password !== ''}"
-          >
+          <span class="login__input-label" :class="{ 'login__input-label-active': formRegister.password !== '' }">
             Пароль
           </span>
-          <b-form-input
-            id="input-password"
-            v-model="formRegister.password"
-            required
-          ></b-form-input>
+          <b-form-input id="input-password" v-model="formRegister.password" required></b-form-input>
         </b-form-group>
+        <b-form-select :options="options" v-model="chooseGender" class="form-select basic-margin" />
 
         <div class="d-flex align-items-center flex-column">
-          <button class="btn w-25 basic-margin main-btn-primary" type="submit" variant="success">Войти</button>
+          <button class="btn basic-margin main-btn-primary" type="submit" variant="success">Зарегистрироваться</button>
           <div class="d-flex justify-content-between login__authorization">
             <b-button>
               <i class="fa-brands fa-google fa-lg"></i>
@@ -52,13 +39,8 @@
           </div>
         </div>
       </b-form>
-      <router-link
-        :to="{name: 'mainPage'}"
-        tag="button"
-        class="login__cross"
-        variant="outline-primary"
-        @click="OpenLogin"
-      >
+      <router-link :to="{ name: 'mainPage' }" tag="button" class="login__cross" variant="outline-primary"
+        @click="OpenLogin">
         <i class="fa-solid fa-xmark fa-lg"></i>
       </router-link>
     </div>
@@ -73,7 +55,8 @@ export default {
       formRegister: {
         name: '',
         password: ''
-      }
+      },
+      options: ['Студент', 'HR-специалист']
     }
   },
   methods: {
@@ -107,17 +90,17 @@ export default {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: rgb(255,255,255);
-  background: linear-gradient(194deg, rgba(255,255,255,1) 0%, rgba(123,69,236,1) 79%, rgba(123,69,236,1) 100%);
+  background: rgb(255, 255, 255);
+  background: linear-gradient(194deg, rgba(255, 255, 255, 1) 0%, rgba(123, 69, 236, 1) 79%, rgba(123, 69, 236, 1) 100%);
 
   &__container {
-  max-width: 600px;
-  min-height: 350px;
-  width: 100%;
-  border-radius: 25px;
-  padding: 25px;
-  position: relative;
-  background: #FFF;
+    max-width: 600px;
+    min-height: 350px;
+    width: 100%;
+    border-radius: 25px;
+    padding: 25px;
+    position: relative;
+    background: #FFF;
   }
 
   &__cross {
@@ -126,17 +109,17 @@ export default {
     right: 25px;
     background: none;
     border: none;
-    color: rgba(123,69,236,1);
+    color: rgba(123, 69, 236, 1);
     transition: color .3s linear;
 
     &:hover {
       &:hover {
-      color: rgb(100, 47, 214);
-    }
+        color: rgb(100, 47, 214);
+      }
 
-    &:active {
-      color: rgba(9,9,121,1);
-    }
+      &:active {
+        color: rgba(9, 9, 121, 1);
+      }
     }
   }
 
@@ -144,6 +127,7 @@ export default {
     max-width: 150px;
     width: 100%;
   }
+
   &__input-label {
     position: relative;
     top: 32px;
@@ -166,10 +150,12 @@ export default {
   background: #7749F8;
   color: #fff;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background: #5227CC;
   }
 }
+
 .basic-margin {
   margin-bottom: 20px;
 }
@@ -177,5 +163,4 @@ export default {
 .logo-img {
   width: 300px;
 }
-
 </style>

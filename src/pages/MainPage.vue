@@ -81,14 +81,12 @@
         <div class="container">
           <div class="d-flex justify-content-between basic-margin">
             <h2>Топ проектов</h2>
-            <button
-              class="btn btn-outline-dark"
-            >
+            <button class="btn btn-outline-dark">
               Посмотреть все
             </button>
           </div>
           <div class="projects__cards">
-            <ProjectCard v-for="item in items" :key="item.text" :info="item"/>
+            <ProjectCard v-for="item in items" :key="item.text" :info="item" />
           </div>
         </div>
       </section>
@@ -112,20 +110,20 @@
               <p class="icon-block-paragraph">завершенных проектов</p>
             </div>
             <div class="icon-block d-flex flex-column align-items-center">
-              <img src="@/assets/rocket.png" alt="Rocket">
-              <p class="icon-block-number">65</p>
-              <p class="icon-block-paragraph">завершенных проектов</p>
+              <img src="@/assets/money.png" alt="Rocket">
+              <p class="icon-block-number">10 млн ₽</p>
+              <p class="icon-block-paragraph">Привлеченных Инвестиций</p>
             </div>
             <div class="icon-block d-flex flex-column align-items-center">
-              <img src="@/assets/rocket.png" alt="Rocket">
-              <p class="icon-block-number">65</p>
-              <p class="icon-block-paragraph">завершенных проектов</p>
+              <img src="@/assets/worker.png" alt="Rocket">
+              <p class="icon-block-number">120</p>
+              <p class="icon-block-paragraph">Компаний</p>
             </div>
           </div>
         </div>
       </section>
     </main>
-    <Footer/>
+    <Footer />
   </div>
 </template>
 
@@ -249,15 +247,18 @@ export default {
 .student {
   background: rgba(82, 168, 116, 0.05);
   padding: 60px 0;
+
   &-block {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+
     &-info {
       width: 100%;
       font-weight: 300;
       font-size: 48px;
       line-height: 68px;
     }
+
     &__info {
       grid-column: 1 / 5;
     }
@@ -315,9 +316,9 @@ export default {
 }
 
 .icon-block {
-  padding: 15px;
-  width: 208px;
-  height: 208px;
+  padding: 35px;
+  width: 240px;
+  height: 240px;
   background: #FFFFFF;
   border-radius: 16px;
 }
@@ -329,6 +330,7 @@ export default {
   color: #000000;
   margin-bottom: 10px;
 }
+
 .icon-block-paragraph {
   font-weight: 400;
   font-size: 22px;

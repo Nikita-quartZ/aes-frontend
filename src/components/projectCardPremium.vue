@@ -11,6 +11,12 @@
       <p class="card__company">
         {{ info.company }}
       </p>
+      <span class="card__amount card__mini">
+        Инвестиции: {{ info.money }}
+      </span>
+      <p class="card__amount card__mini">
+        Сроек реализации: {{ info.data }}
+      </p>
       <p class="card__amount">
         {{ info.amount }} заявок
       </p>

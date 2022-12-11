@@ -81,9 +81,9 @@
         <div class="container">
           <div class="d-flex justify-content-between basic-margin">
             <h2>Топ проектов</h2>
-            <button class="btn btn-outline-dark">
+            <router-link class="btn btn-outline-dark" tag="button" :to="{name: 'ProjectPage'}">
               Посмотреть все
-            </button>
+            </router-link>
           </div>
           <div class="projects__cards">
             <ProjectCard v-for="item in items" :key="item.text" :info="item" />
@@ -131,6 +131,12 @@
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import ProjectCard from '@/components/projectCard.vue'
+import dnk from '@/assets/dnk.jpg'
+import dog from '@/assets/dog.jpg'
+import med from '@/assets/med.jpg'
+import mobile from '@/assets/mobile.jpg'
+import veter from '@/assets/veter.jpg'
+import ximia from '@/assets/ximia.jpg'
 
 export default {
   data () {
@@ -141,40 +147,52 @@ export default {
       },
       items: [
         {
-          url: 'https://mobimg.b-cdn.net/v3/fetch/89/89b1452e43e738be92c573fdebfb1d22.jpeg',
-          text: 'Роботы для выгула собак',
-          company: 'ООО “Нанотехнологии”',
-          amount: 225
+          url: dnk,
+          text: 'Deeploid',
+          company: 'Генотек',
+          money: '1.2 млн р.',
+          data: 'Сертябрь 2024',
+          amount: 3453
         },
         {
-          url: 'https://mobimg.b-cdn.net/v3/fetch/89/89b1452e43e738be92c573fdebfb1d22.jpeg',
-          text: 'Роботы для выгула собак',
-          company: 'ООО “Нанотехнологии”',
-          amount: 225
+          url: dog,
+          text: 'SimpPet',
+          company: 'TEDDY FOOD',
+          money: '5.0 млн р.',
+          data: 'Январь 2025',
+          amount: 9781
         },
         {
-          url: 'https://mobimg.b-cdn.net/v3/fetch/89/89b1452e43e738be92c573fdebfb1d22.jpeg',
-          text: 'Роботы для выгула собак',
-          company: 'ООО “Нанотехнологии”',
-          amount: 225
+          url: veter,
+          text: 'Energy AI',
+          company: 'L-Charge',
+          money: '0.5 млн р.',
+          data: 'Июнь 2023',
+          amount: 1423
         },
         {
-          url: 'https://mobimg.b-cdn.net/v3/fetch/89/89b1452e43e738be92c573fdebfb1d22.jpeg',
-          text: 'Роботы для выгула собак',
-          company: 'ООО “Нанотехнологии”',
-          amount: 225
+          url: med,
+          text: 'Artificial Crystal',
+          company: 'Welltory',
+          money: '1.4 млн р.',
+          data: 'Сертябрь 2023',
+          amount: 754
         },
         {
-          url: 'https://mobimg.b-cdn.net/v3/fetch/89/89b1452e43e738be92c573fdebfb1d22.jpeg',
-          text: 'Роботы для выгула собак',
-          company: 'ООО “Нанотехнологии”',
-          amount: 225
+          url: mobile,
+          text: 'GLUOM',
+          company: 'Revolut',
+          money: '1.5 млн р.',
+          data: 'Сертябрь 2023',
+          amount: 6431
         },
         {
-          url: 'https://mobimg.b-cdn.net/v3/fetch/89/89b1452e43e738be92c573fdebfb1d22.jpeg',
-          text: 'Роботы для выгула собак',
-          company: 'ООО “Нанотехнологии”',
-          amount: 225
+          url: ximia,
+          text: 'Med Data',
+          company: 'Paithology',
+          money: '3.0 млн р.',
+          data: 'Сертябрь 2023',
+          amount: 1322
         }
       ]
     }

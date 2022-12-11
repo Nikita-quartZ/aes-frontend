@@ -47,53 +47,73 @@ import Header from '@/components/header'
 import Footer from '@/components/footer'
 import ProjectCard from '@/components/projectCard'
 import ProjectCardPremium from '@/components/projectCardPremium'
+import dnk from '@/assets/dnk.jpg'
+import dog from '@/assets/dog.jpg'
+import med from '@/assets/med.jpg'
+import mobile from '@/assets/mobile.jpg'
+import veter from '@/assets/veter.jpg'
+import ximia from '@/assets/ximia.jpg'
 
 export default {
   data () {
     return {
       premiumItem: {
         url: 'https://phonoteka.org/uploads/posts/2021-07/1625517350_6-phonoteka-org-p-robototekhnika-zastavka-krasivie-zastavki-6.jpg',
-        header: 'Роботы для выгула собак',
+        header: 'Genetic intelligence',
         text: 'Искусственный интеллект принимает разные формы и часто находит своё воплощение в строчках кода, которые управляют сложными машинами и программами deep learning. Чаще всего угрозу со стороны искусственного интеллекта люди представляют в виде гуманоидных машин, то есть роботов, которые используют свою силу, чтобы поработить своих создателей.',
         company: 'ООО “Нанотехнологии”',
-        amount: 225
+        money: '15.0 млн р.',
+        data: 'Октябрь 2025',
+        amount: 23354
       },
       items: [
         {
-          url: 'https://mobimg.b-cdn.net/v3/fetch/89/89b1452e43e738be92c573fdebfb1d22.jpeg',
-          text: 'Роботы для выгула собак',
-          company: 'ООО “Нанотехнологии”',
-          amount: 225
+          url: dnk,
+          text: 'Deeploid',
+          company: 'Генотек',
+          money: '1.2 млн р.',
+          data: 'Сертябрь 2024',
+          amount: 3453
         },
         {
-          url: 'https://mobimg.b-cdn.net/v3/fetch/89/89b1452e43e738be92c573fdebfb1d22.jpeg',
-          text: 'Роботы для выгула собак',
-          company: 'ООО “Нанотехнологии”',
-          amount: 225
+          url: dog,
+          text: 'SimpPet',
+          company: 'TEDDY FOOD',
+          money: '5.0 млн р.',
+          data: 'Январь 2025',
+          amount: 9781
         },
         {
-          url: 'https://mobimg.b-cdn.net/v3/fetch/89/89b1452e43e738be92c573fdebfb1d22.jpeg',
-          text: 'Роботы для выгула собак',
-          company: 'ООО “Нанотехнологии”',
-          amount: 225
+          url: veter,
+          text: 'Energy AI',
+          company: 'L-Charge',
+          money: '0.5 млн р.',
+          data: 'Июнь 2023',
+          amount: 1423
         },
         {
-          url: 'https://mobimg.b-cdn.net/v3/fetch/89/89b1452e43e738be92c573fdebfb1d22.jpeg',
-          text: 'Роботы для выгула собак',
-          company: 'ООО “Нанотехнологии”',
-          amount: 225
+          url: med,
+          text: 'Artificial Crystal',
+          company: 'Welltory',
+          money: '1.4 млн р.',
+          data: 'Сертябрь 2023',
+          amount: 754
         },
         {
-          url: 'https://mobimg.b-cdn.net/v3/fetch/89/89b1452e43e738be92c573fdebfb1d22.jpeg',
-          text: 'Роботы для выгула собак',
-          company: 'ООО “Нанотехнологии”',
-          amount: 225
+          url: mobile,
+          text: 'GLUOM',
+          company: 'Revolut',
+          money: '1.5 млн р.',
+          data: 'Сертябрь 2023',
+          amount: 6431
         },
         {
-          url: 'https://mobimg.b-cdn.net/v3/fetch/89/89b1452e43e738be92c573fdebfb1d22.jpeg',
-          text: 'Роботы для выгула собак',
-          company: 'ООО “Нанотехнологии”',
-          amount: 225
+          url: ximia,
+          text: 'Med Data',
+          company: 'Paithology',
+          money: '3.0 млн р.',
+          data: 'Сертябрь 2023',
+          amount: 1322
         }
       ]
     }

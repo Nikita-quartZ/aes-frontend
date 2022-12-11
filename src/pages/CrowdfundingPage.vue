@@ -58,7 +58,6 @@ export default {
   data () {
     return {
       premiumItem: {
-        id: 6,
         url: 'https://phonoteka.org/uploads/posts/2021-07/1625517350_6-phonoteka-org-p-robototekhnika-zastavka-krasivie-zastavki-6.jpg',
         header: 'Genetic intelligence',
         text: 'Искусственный интеллект принимает разные формы и часто находит своё воплощение в строчках кода, которые управляют сложными машинами и программами deep learning. Чаще всего угрозу со стороны искусственного интеллекта люди представляют в виде гуманоидных машин, то есть роботов, которые используют свою силу, чтобы поработить своих создателей.',
@@ -69,6 +68,25 @@ export default {
       },
       items: [
         {
+          id: 2,
+          url: veter,
+          text: 'Energy AI',
+          company: 'L-Charge',
+          money: '0.5 млн р.',
+          data: 'Июнь 2023',
+          amount: 1423
+        },
+        {
+          id: 4,
+          url: mobile,
+          text: 'GLUOM',
+          company: 'Revolut',
+          money: '1.5 млн р.',
+          data: 'Сертябрь 2023',
+          amount: 6431
+        },
+
+        {
           id: 0,
           url: dnk,
           text: 'Deeploid',
@@ -76,6 +94,15 @@ export default {
           money: '1.2 млн р.',
           data: 'Сертябрь 2024',
           amount: 3453
+        },
+        {
+          id: 5,
+          url: ximia,
+          text: 'Med Data',
+          company: 'Paithology',
+          money: '3.0 млн р.',
+          data: 'Сертябрь 2023',
+          amount: 1322
         },
         {
           id: 1,
@@ -87,15 +114,6 @@ export default {
           amount: 9781
         },
         {
-          id: 2,
-          url: veter,
-          text: 'Energy AI',
-          company: 'L-Charge',
-          money: '0.5 млн р.',
-          data: 'Июнь 2023',
-          amount: 1423
-        },
-        {
           id: 3,
           url: med,
           text: 'Artificial Crystal',
@@ -103,24 +121,6 @@ export default {
           money: '1.4 млн р.',
           data: 'Сертябрь 2023',
           amount: 754
-        },
-        {
-          id: 4,
-          url: mobile,
-          text: 'GLUOM',
-          company: 'Revolut',
-          money: '1.5 млн р.',
-          data: 'Сертябрь 2023',
-          amount: 6431
-        },
-        {
-          id: 5,
-          url: ximia,
-          text: 'Med Data',
-          company: 'Paithology',
-          money: '3.0 млн р.',
-          data: 'Сертябрь 2023',
-          amount: 1322
         }
       ]
     }

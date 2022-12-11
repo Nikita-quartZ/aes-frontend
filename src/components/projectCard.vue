@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <router-link :to="`/project/${info.id}`" class="card" tag="div">
     <img :src="info.url" alt="image">
     <div class="card__info">
       <h6 class="card__header">
@@ -12,28 +12,32 @@
         Инвестиции: {{ info.money }}
       </span>
       <p class="card__amount card__mini">
-        Сроек реализации: {{ info.data }}
+        Срок реализации: {{ info.data }}
       </p>
       <p class="card__amount">
         {{ info.amount }} заявок
       </p>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
 export default {
   props: {
-    info: Object
+    info: Object,
+    id: Number
   }
 }
 </script>
 
 <style lang="scss">
 .card {
+  cursor: pointer;
   border: 1px solid #B3B3B3;
   border-radius: 8px;
   overflow: hidden;
+  color: #000;
+  text-decoration: none;
 
   &__mini {
     font-size: 13px;

@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <router-link class="card" :to="`/project/6`">
     <img :src="info.url" alt="image">
     <div class="card__info">
       <h5 class="card-premium__header">
@@ -21,7 +21,7 @@
         {{ info.amount }} заявок
       </p>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>

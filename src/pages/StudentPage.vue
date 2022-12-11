@@ -4,7 +4,7 @@
     <main class="searching">
       <div class="container">
         <h2>
-          Поиск проектов
+          Подборка резюме
         </h2>
         <div class="d-flex w-100 ">
           <input type="text" class="search-input">

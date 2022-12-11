@@ -86,7 +86,7 @@
             </router-link>
           </div>
           <div class="projects__cards">
-            <ProjectCard v-for="item in items" :key="item.text" :info="item" />
+            <ProjectCard :info="item" :id="index" v-for="(item, index) in items" :key="item.text"/>
           </div>
         </div>
       </section>
@@ -147,6 +147,7 @@ export default {
       },
       items: [
         {
+          id: 0,
           url: dnk,
           text: 'Deeploid',
           company: 'Генотек',
@@ -155,6 +156,7 @@ export default {
           amount: 3453
         },
         {
+          id: 1,
           url: dog,
           text: 'SimpPet',
           company: 'TEDDY FOOD',
@@ -163,6 +165,7 @@ export default {
           amount: 9781
         },
         {
+          id: 2,
           url: veter,
           text: 'Energy AI',
           company: 'L-Charge',
@@ -171,6 +174,7 @@ export default {
           amount: 1423
         },
         {
+          id: 3,
           url: med,
           text: 'Artificial Crystal',
           company: 'Welltory',
@@ -179,6 +183,7 @@ export default {
           amount: 754
         },
         {
+          id: 4,
           url: mobile,
           text: 'GLUOM',
           company: 'Revolut',
@@ -187,6 +192,7 @@ export default {
           amount: 6431
         },
         {
+          id: 5,
           url: ximia,
           text: 'Med Data',
           company: 'Paithology',

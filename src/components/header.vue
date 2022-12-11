@@ -20,7 +20,7 @@
             </router-link>
           </li>
           <li class="nav__items">
-            <router-link :to="{ name: 'ProjectPage' }">
+            <router-link :to="{ name: 'CrowdfundingPage' }">
               Краудфандинг
             </router-link>
           </li>

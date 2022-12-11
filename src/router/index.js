@@ -6,6 +6,8 @@ import ProfilePage from '../pages/ProfilePage.vue'
 import ProjectPage from '../pages/ProjectPage.vue'
 import StudentPage from '../pages/StudentPage.vue'
 import NotFoundPage from '../pages/NotFoundPage.vue'
+import MainProjectPage from '../pages/MainProjectPage.vue'
+import CrowdfundingPage from '../pages/CrowdfundingPage.vue'
 
 Vue.use(VueRouter)
 
@@ -34,6 +36,16 @@ const routes = [
     path: '/students',
     name: 'StudentsPage',
     component: StudentPage
+  },
+  {
+    path: '/сrowdfunding',
+    name: 'CrowdfundingPage',
+    component: CrowdfundingPage
+  },
+  {
+    path: '/project/:id',
+    name: 'MainProjectPage',
+    component: MainProjectPage
   },
   {
     path: '*',
